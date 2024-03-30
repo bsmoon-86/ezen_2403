@@ -22,7 +22,7 @@ def sort_c(_list, reverse = False):
         # data를 비어있는 리스트에 추가(append) -> _list에서 해당하는 데이터를 제거(remove)
         result.append(data)
         _list.remove(data)
-    print(result)
+    # print(result)
     return result
         
             
