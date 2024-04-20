@@ -39,6 +39,11 @@ def signin():
     # 유저가 입력한 id 값을 변수에 저장
     _id = meg['input_id']
     _pass = meg['input_pass']
+    # 데이터의 개수를 입력값을 받아온다. (옵션 인자)
+    try:
+        _rows = meg['input_row']
+    except:
+        _rows = 0
     # 로그인의 성공 조건 id가 'test' 이고 password가 '1234'인 경우
     if (_id == 'test') & (_pass == '1234'):
         # print(meg)  
@@ -46,14 +51,17 @@ def signin():
         # 외부의 csv 파일을 로드 
         # 상위 폴더로 이동(../) -> python 폴더 이동 (python/)-> csv 폴더로 이동(csv/) -> 파일이름(corona.csv)
         df = pd.read_csv('../python/csv/corona.csv')
+        # 만약에 _rows가 0이 아니라면
+        if _rows != 0:
+            df = df.head(int(_rows))
         # 데이터프레임의 타입을 dict 타입으로 변경 
-        data = df.to_dict()
+        data = df.to_dict('records')
         return data
 
     else: 
         return "로그인이 실패"
 
-
+# http://127.0.0.1:5000/signin?input_id=test&input_pass=1234&input_row=10
 
 # 웹 서버를 실행
 app.run(debug=True)
