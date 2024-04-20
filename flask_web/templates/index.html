@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 제목 태그 생성 -->
+    <h1>Index Page</h1>
+    <!-- 글 문단 태그 -->
+    <p>해당 페이지는 인덱스 페이지입니다.</p>
+    <!-- 하이퍼 링크 생성 -->
+    <!-- 절대 주소 하이퍼링크 -->
+    <a href="https://www.google.com">구글로 이동</a>
+    <!-- 강제 줄바꿈 -->
+    <br>
+    <a href="https://www.naver.com">네이버로 이동</a>
+    <br>
+    <!-- 상대 주소 하이퍼링크 -->
+    <a href="/second">Second 페이지로 이동</a>
+
+
+    <!-- 유저가 입력할 수 있는 공간 -->
+    <!-- form 태그를 이용하여 유저가 입력한 데이터를 서버가 받을수 있도록 설정 -->
+    <!-- action : 유저가 입력한 데이터를 어느 주소로 보낼것인가?
+         method : 데이터를 보내는 방식 (get / post)
+    -->
+    <form action="/signin" method="get">
+        <!-- 유저가 실제 데이터를 입력하는 공간 -->
+        <input type="text" name="input_id">
+        <br>
+        <input type="password" name="input_pass">
+        <br>
+        <!-- 제출 버튼 생성 -->
+        <input type="submit">
+    </form>
+</body>
+</html>
